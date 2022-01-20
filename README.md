@@ -1,1 +1,1 @@
-# PS
+# Problem Solving (Algorithm)
