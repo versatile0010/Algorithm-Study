@@ -1,0 +1,66 @@
+/*
+BOJ : https://www.acmicpc.net/problem/1780
+Recurssive, Divide & Conquer
+Versatile0010
+*/
+
+#include <bits/stdc++.h>
+using namespace std;
+
+const int MX = 2200;
+int paper[MX][MX];//3^7 = 2187
+
+int answer_arr[3]; 
+/*
+index = 0 에 -1 종이 개수, index 1 에 0 종이 개수, index 2에 1 종이 개수 저장
+*/
+
+bool isitSame(int x, int y, int z)
+{
+	for (int i = x; i < x + z; i++)
+	{
+		for (int j = y; j < y + z; j++)
+		{
+			if (paper[x][y] != paper[i][j])
+				return false;
+		}
+	}
+	return true;
+}
+
+void solve(int x, int y, int z) //재귀함수
+{
+	if (isitSame(x, y, z))
+	{ // 해당 x,y부터 시작하는 z 크기의 색종이가 같은 색이라면
+		answer_arr[paper[x][y] + 1] += 1; //개수 하나 추가
+		return; // 종료
+	}
+	int n = z / 3; // 아니라면 크기를 3으로 나눔
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			solve(x + i * n, y + j * n, n);
+			// 총 9개로 나누어진 색종이를 순회하며 재귀함수 호출
+		}
+	}
+}
+
+int main()
+{
+	ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+	int N;
+	cin >> N;
+
+	for (int i = 0; i < N; i++)
+		for (int j = 0; j < N; j++)
+			cin >> paper[i][j];
+
+	solve(0, 0, N);
+
+	for (auto ele : answer_arr)
+	{
+		cout << ele << '\n';
+	}
+	return 0;
+}
