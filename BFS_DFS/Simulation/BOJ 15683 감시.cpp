@@ -1,13 +1,13 @@
 /*
 BOJ : https://www.acmicpc.net/problem/15683
-backtracking °¨½Ã ( »ï¼º SW ¿ª·® Æò°¡ )
+backtracking ê°ì‹œ ( ì‚¼ì„± SW ì—­ëŸ‰ í‰ê°€ )
 Versatile0010
 */
 
 #include <bits/stdc++.h>
 using namespace std;
 int row, col;
-int graph[8][8]; // »ç¹«½Ç Á¤º¸ ÀÔ·Â
+int graph[8][8]; // ì‚¬ë¬´ì‹¤ ì •ë³´ ì…ë ¥
 
 struct CCTV
 {
@@ -36,7 +36,7 @@ void copy(int desc[8][8], int src[8][8])
 void update(int dir, CCTV c)
 {
 	dir = dir % 4;
-	if (dir == 0) // µ¿
+	if (dir == 0) // ë™
 	{
 		for (int y = c.y + 1; y< col; y++)
 		{
@@ -44,7 +44,7 @@ void update(int dir, CCTV c)
 			graph[c.x][y] = -1;
 		}
 	}
-	if (dir == 1) // ºÏ
+	if (dir == 1) // ë¶
 	{
 		for (int x = c.x - 1; x >= 0; x--)
 		{
@@ -52,7 +52,7 @@ void update(int dir, CCTV c)
 			graph[x][c.y] = -1;
 		}
 	}
-	if (dir == 2) // ¼­
+	if (dir == 2) // ì„œ
 	{
 		for (int y = c.y - 1; y >=0; y--)
 		{
@@ -60,7 +60,7 @@ void update(int dir, CCTV c)
 			graph[c.x][y] = -1;
 		}
 	}
-	if (dir == 3) // ³²
+	if (dir == 3) // ë‚¨
 	{
 		for (int x = c.x + 1; x < row ; x++)
 		{
