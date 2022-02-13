@@ -1,6 +1,6 @@
 /*
 BOJ : https://www.acmicpc.net/problem/2206
-backtracking º® ºÎ¼ö°í ÀÌµ¿ÇÏ±â
+backtracking ë²½ ë¶€ìˆ˜ê³  ì´ë™í•˜ê¸°
 Versatile0010
 */
 
@@ -37,13 +37,13 @@ int bfs()
 			if (nx < 0 || nx >= n || ny < 0 || ny >= m) continue; // out of bound
 			if (graph[nx][ny] == '1' && !broken && visited[nx][ny][broken] == -1)
 			{
-				// ´ÙÀ½ À§Ä¡°¡ º®ÀÌ°í && ¾ÆÁ÷ ºÎ¼ø Àû ¾ø°í && ¹æ¹®ÇÏÁöµµ ¾Ê¾Ò´Ù¸é
+				// ë‹¤ìŒ ìœ„ì¹˜ê°€ ë²½ì´ê³  && ì•„ì§ ë¶€ìˆœ ì  ì—†ê³  && ë°©ë¬¸í•˜ì§€ë„ ì•Šì•˜ë‹¤ë©´
 				visited[nx][ny][1] = visited[x][y][broken] + 1;
 				Q.push({ nx,ny,1 });
 			}
 			if (graph[nx][ny] == '0' && visited[nx][ny][broken] == -1)
 			{
-				// ´ÙÀ½ À§Ä¡°¡ º®ÀÌ ¾Æ´Ï°í ¾ÆÁ÷ ¹æ¹®ÇÏÁö ¾Ê¾Ò´Ù¸é
+				// ë‹¤ìŒ ìœ„ì¹˜ê°€ ë²½ì´ ì•„ë‹ˆê³  ì•„ì§ ë°©ë¬¸í•˜ì§€ ì•Šì•˜ë‹¤ë©´
 				visited[nx][ny][broken] = visited[x][y][broken] + 1;
 				Q.push({ nx,ny,broken });
 			}
