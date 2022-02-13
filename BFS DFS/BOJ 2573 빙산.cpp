@@ -1,6 +1,6 @@
 /*
 BOJ : https://www.acmicpc.net/problem/2573
-backtracking ºù»ê
+backtracking ë¹™ì‚°
 Versatile0010
 */
 
@@ -30,7 +30,7 @@ void melting()
 	{
 		for (int j = 0; j < col; j++)
 		{
-			if (graph[i][j] == 0) continue; // ¹°ÀÌ¸é Ã¼Å©ÇÒ ÇÊ¿ä ¾øÀ½
+			if (graph[i][j] == 0) continue; // ë¬¼ì´ë©´ ì²´í¬í•  í•„ìš” ì—†ìŒ
 			for (int dir = 0; dir < 4; dir++)
 			{
 				int nx = i + dx[dir];
