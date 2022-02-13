@@ -1,6 +1,6 @@
 /*
 BOJ : https://www.acmicpc.net/problem/7569
-backtracking Åä¸¶Åä(3D)
+backtracking í† ë§ˆí† (3D)
 Versatile0010
 */
 
@@ -8,18 +8,18 @@ Versatile0010
 #include <bits/stdc++.h>
 using namespace std;
 
-int col, row, h; // m:°¡·Î n:¼¼·Î h:³ôÀÌ ~100
+int col, row, h; // m:ê°€ë¡œ n:ì„¸ë¡œ h:ë†’ì´ ~100
 int graph[100][100][100];
 int dist[100][100][100];
 
-int dx[6]{ -1,1,0,0,0,0 }; //»óÇÏÁÂ¿ì À§¾Æ·¡
+int dx[6]{ -1,1,0,0,0,0 }; //ìƒí•˜ì¢Œìš° ìœ„ì•„ë˜
 int dy[6]{ 0,0,-1,1,0,0 };
 int dh[6]{ 0,0,0,0,1,-1 };
 
 int main()
 {
 	ios::sync_with_stdio(); cin.tie(0);
-	cin >> col >> row >> h; //°¡·Î ¼¼·Î ³ôÀÌ ÀÔ·Â
+	cin >> col >> row >> h; //ê°€ë¡œ ì„¸ë¡œ ë†’ì´ ì…ë ¥
 	queue<tuple<int, int, int>> Q;
 	for (int i = 0; i < h; i++)
 	{
@@ -32,7 +32,7 @@ int main()
 				{
 					Q.push({ i,j,k });
 				}
-				if (graph[i][j][k] == 0) //ÀÍÁö¾ÊÀºÅä¸¶Åä
+				if (graph[i][j][k] == 0) //ìµì§€ì•Šì€í† ë§ˆí† 
 				{
 					dist[i][j][k] = -1;
 				}
