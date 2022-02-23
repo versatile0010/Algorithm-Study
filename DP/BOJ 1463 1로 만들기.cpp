@@ -1,6 +1,6 @@
 /*
 BOJ : https://www.acmicpc.net/problem/1463
-backtracking 1로 만들기
+DP 1로 만들기
 Versatile0010
 */
 #define _CRT_SECURE_NO_WARNINGS
