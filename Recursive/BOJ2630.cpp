@@ -8,7 +8,7 @@ Versatile0010
 using namespace std;
 
 int paper[150][150];
-int answer_arr[2]; // arr[0] ¿¡´Â ÈòÁ¾ÀÌ °³¼ö, arr[1] ¿¡´Â ÆÄ¶õÁ¾ÀÌ°³¼ö
+int answer_arr[2]; // arr[0] ì—ëŠ” í°ì¢…ì´ ê°œìˆ˜, arr[1] ì—ëŠ” íŒŒë€ì¢…ì´ê°œìˆ˜
 
 bool isitSame(int x, int y, int n)
 {
@@ -24,8 +24,8 @@ void solve(int x, int y, int z)
 		answer_arr[paper[x][y]]+= 1;
 		return;
 	}
-	// Á¾ÀÌ°¡ °°Áö ¾Ê´Ù.
-	int n = z / 2; //¹İÀ¸·Î ÂÉ°µ´Ù.
+	// ì¢…ì´ê°€ ê°™ì§€ ì•Šë‹¤.
+	int n = z / 2; //ë°˜ìœ¼ë¡œ ìª¼ê° ë‹¤.
 	for (int i = 0; i < 2; i++)
 		for (int j = 0; j < 2; j++)
 			solve(x + i * n, y + j * n, n);
