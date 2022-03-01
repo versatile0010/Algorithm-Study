@@ -1,6 +1,6 @@
 /*
 BOJ : https://www.acmicpc.net/problem/1992
-Recurssive, Divide & Conquer ÄõµåÆ®¸®
+Recurssive, Divide & Conquer ì¿¼ë“œíŠ¸ë¦¬
 Versatile0010
 */
 
@@ -27,11 +27,11 @@ void solve(int x, int y, int z)
 
 		return;
 	}
-	int n = z / 2; // ¹ÝÀ¸·Î ÂÉ°µ´Ù.
+	int n = z / 2; // ë°˜ìœ¼ë¡œ ìª¼ê° ë‹¤.
 	cout << '(';
 	for (int i = 0; i < 2; i++)
 	{
-		for (int j = 0; j < 2; j++) // 4°³ ±¸¿ª¿¡ ´ëÇØ¼­
+		for (int j = 0; j < 2; j++) // 4ê°œ êµ¬ì—­ì— ëŒ€í•´ì„œ
 		{
 			solve(x + i * n, y + j * n, n);
 		}
