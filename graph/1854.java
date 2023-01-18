@@ -29,7 +29,7 @@ public class Main {
         Comparator<Integer> cp = new Comparator<Integer>() {
             @Override
             public int compare(Integer o1, Integer o2) {
-                return o1 < o2 ? 1 : -1; // 오름차순
+                return o1 < o2 ? 1 : -1;
             }
         };
         for (int i = 0; i <= n; i++) {
